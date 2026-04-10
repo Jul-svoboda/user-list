@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=Saira+Stencil:ital,wght@0,100..900;1,100..900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    background-color: #f8dc8a;
+    color: #b08402;
+    font-family: "Saira Stencil", sans-serif;
+    font-weight: 300;
+}
+
+header {
+    color: #feecb7;
+    background-color: #fabc00;
+    padding: 20px 100px;
+    font-weight: 600;
+}
+
+main {
+    margin: 50px 100px;
+    width: 50%;
+    float: left;
+}
+main .user {
+    margin-bottom:  50px;
+    background-color: #e2c46c84;
+    padding: 20px;
+}
+
+main .icon {
+    color: #997405;
+    float: right;
+    cursor: pointer;
+    transform: scale(1);
+    margin-right: 25px;
+}
+
+main .icon:hover {
+    opacity: 0.7;
+}
+
+aside {
+    width: 20%;
+    margin-top: 50px;
+    margin-left: 5%;
+    float: left;
+}
+
+.form_input {
+    width: 90%;
+    padding: 15px 5%;
+    font-family: "Saira Stencil", sans-serif;
+    font-weight: 300;
+    margin-bottom: 10px;
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+    background: #d6ba66;
+    color: #997405;
+}
+.form_input-checkbox {
+    margin-bottom: 10px;
+    display: flex;
+    gap: 10px;
+}
+.form_input-button {
+    width: 90%;
+    padding: 15px 5%;
+    font-family: "Saira Stencil", sans-serif;
+    font-weight: 300;
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+    background: #d6ba66;
+    color: #997405;
+    width: 100%;
+    cursor: pointer;
+    transition: transform 500ms ease;
+}
+.form_input-button:hover {
+    transform: scale(1.03);
+}
+.user .form {
+    margin-top: 20px;
+}
