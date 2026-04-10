@@ -30,6 +30,11 @@ main .user {
     padding: 20px;
 }
 
+main img {
+    width: 150px;
+    height: 150px;
+}
+
 main .icon {
     color: #997405;
     float: right;

@@ -21,7 +21,8 @@ class User extends React.Component {
                 }} className="icon icon-edit"/>
                 <h3>{this.user.first_name} {this.user.last_name}</h3>
                 <p>{this.user.email}</p>
-                <img src={this.user.avatar && `https://i.pravatar.cc/150?u=${this.user.email}`} alt="Avatar"/>
+                <img src={this.user.avatar ? `https://i.pravatar.cc/150?u=${this.user.email}` 
+                : `https://api.dicebear.com/7.x/initials/svg?seed=${this.user.first_name}`} alt="Avatar"/>
                 <p>{this.user.isHappy ? ':)' : ":(" }</p>
 
                 {this.state.editForm && <AddUser user={this.user} Add={this.props.onEdit} /> }
