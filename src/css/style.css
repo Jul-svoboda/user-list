@@ -13,21 +13,34 @@ body {
 }
 
 header {
+    position: fixed;
+    min-width: 100vw;
     color: #feecb7;
     background-color: #fabc00;
     padding: 20px 100px;
     font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    font-size: 30px;
+}
+
+.header__title {
+    min-width: 200px;
 }
 
 main {
-    margin: 50px 100px;
-    width: 50%;
+    margin: 150px 100px;
+    min-width: 50%;
     float: left;
 }
 main .user {
     margin-bottom:  50px;
     background-color: #e2c46c84;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
 
 main img {
@@ -49,9 +62,31 @@ main .icon:hover {
 
 aside {
     width: 20%;
-    margin-top: 50px;
+    height: 100%;
+    margin-top: 150px;
     margin-left: 5%;
     float: left;
+
+    @media (max-width: 1200px){
+        position: fixed;
+        width: 100%;
+        margin: 0;
+        right: -100%;
+        top: 0;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.6);
+        transition: 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
+
+.open {
+    @media (max-width: 1200px) {
+        right: 0;
+    }
+
 }
 
 .form_input {
@@ -66,12 +101,23 @@ aside {
     background: #d6ba66;
     color: #997405;
 }
+
+input::placeholder {
+    font-family: "Saira Stencil", sans-serif;
+    font-weight: 300;
+    color: #997405;
+}
+
 .form_input-checkbox {
+    background: #d6ba66;
+    color: #997405;
+    padding: 15px 5%;
     margin-bottom: 10px;
     display: flex;
+    justify-content: space-between;
     gap: 10px;
 }
-.form_input-button {
+.button {
     width: 90%;
     padding: 15px 5%;
     font-family: "Saira Stencil", sans-serif;
@@ -85,9 +131,60 @@ aside {
     cursor: pointer;
     transition: transform 500ms ease;
 }
-.form_input-button:hover {
+.button:hover {
     transform: scale(1.03);
 }
+
+.header__button {
+    max-width: 300px;
+    min-width: 115px;
+    margin-right: 200px;
+    @media (min-width: 1200px) {
+        display: none;
+    }
+}
+
+.cross {
+    cursor: pointer;
+    display: flex;
+    align-self: flex-end;
+    flex-direction: column;
+    height: 30px;
+    width: 30px;
+}
+
+.cross__line {
+    border: solid 1.5px #997405;
+    @media (min-width: 1200px) {
+        display: none;
+    }
+}
+
+.cross__line:first-child {
+    transform: rotate(-45deg);
+}
+
+.cross__line:last-child {
+    transform: translateY(-3px) rotate(45deg);
+}
+
 .user .form {
-    margin-top: 20px;
+    align-self: center;
+}
+
+.user .form .cross {
+    display: none;
+}
+
+.form {
+    right: 20px;
+    display: flex;
+    flex-direction: column;
+
+    @media (max-width: 1200px) {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 60%;
+    }
 }

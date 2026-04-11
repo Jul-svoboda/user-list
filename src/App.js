@@ -8,10 +8,6 @@ const baseUrl = 'https://reqres.in/api/users?page=1';
 
 class  App extends React.Component {
 
-    componentDidMount() {
-
-    }
-
     constructor(props) {
     super(props)
         axios.get(baseUrl, {
@@ -20,25 +16,32 @@ class  App extends React.Component {
             }
         }).then((res) => { this.setState({users: res.data.data})})
 
-
     this.state = {
-        users: []
+        users: [],
+        isFormOpen: false
     }
     this.addUser = this.addUser.bind(this);
     this.deleteUser = this.deleteUser.bind(this);
     this.editUser = this.editUser.bind(this);
+    this.toggleForm = this.toggleForm.bind(this);
     }
 
     render() {
         return (<div>
-            <Header title='User list' />
+            <Header title='User list' onToggleForm={this.toggleForm} />
             <main>
                 <Users users={this.state.users} onEdit={this.editUser} onDelete={this.deleteUser}/>
             </main>
-            <aside>
-                <AddUser Add={this.addUser}/>
+            <aside className={this.state.isFormOpen ? "open" : "close"}>
+                <AddUser Add={this.addUser} onToggleForm={this.toggleForm} />
             </aside>
         </div> )
+    }
+
+    toggleForm() {
+        this.setState(prevState => ({
+            isFormOpen: !prevState.isFormOpen
+        }))
     }
 
     editUser(user) {

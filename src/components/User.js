@@ -13,12 +13,15 @@ class User extends React.Component {
     render() {
         return (
             <div className="user">
-                <PiPlusSquareDuotone onClick={() => this.props.onDelete(this.user.id)} className="icon icon-delete"/>
-                <PiGavelDuotone onClick={() => {
-                    this.setState({
-                        editForm: !this.state.editForm
-                    })
-                }} className="icon icon-edit"/>
+                <div>
+                    <PiPlusSquareDuotone onClick={() => this.props.onDelete(this.user.id)} className="icon icon-delete"/>
+                    <PiGavelDuotone onClick={() => {
+                        this.setState({
+                            editForm: !this.state.editForm
+                        })
+                    }} className="icon icon-edit"/>
+                </div>
+                
                 <h3>{this.user.first_name} {this.user.last_name}</h3>
                 <p>{this.user.email}</p>
                 <img src={this.user.avatar ? `https://i.pravatar.cc/150?u=${this.user.email}` 

@@ -37,6 +37,10 @@ class AddUser extends React.Component {
                     this.myForm.reset()
                 }}
             >
+                <div className="cross" onClick={this.props.onToggleForm}>
+                    <div className="cross__line"></div>
+                    <div className="cross__line"></div>
+                </div>
                 <input className="form_input" placeholder="First Name" required onChange={(e) => this.setState({first_name: e.target.value })} />
                 <input className="form_input" placeholder="Last Name" onChange={(e) => this.setState({last_name: e.target.value })} />
                 <input className="form_input" placeholder="Email" onChange={(e) => this.setState({mail: e.target.value })} />
@@ -45,7 +49,7 @@ class AddUser extends React.Component {
                    <label htmlFor="isHappy">Are you Happy?</label>
                     <input type="checkbox" id="isHappy" onChange={(e) => this.setState({isHappy: e.target.checked })} /> 
                 </div>
-                <button className="form_input-button" type="submit">
+                <button className="button" type="submit" onClick={this.props.onToggleForm}>
                     Add
                 </button>
             </form>
